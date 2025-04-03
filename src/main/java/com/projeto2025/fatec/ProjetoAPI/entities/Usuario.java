@@ -30,7 +30,7 @@ public class Usuario {
         return nome;
     }
 
-    public void setNome(){
+    public void setNome(String nome){
         this.nome = nome;
     }
 
@@ -38,7 +38,7 @@ public class Usuario {
         return email;
     }
 
-    public void setEmail(){
+    public void setEmail(String email){
         this.email = email;
     }
 }
