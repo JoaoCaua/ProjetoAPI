@@ -21,7 +21,7 @@ public class UsuarioController {
     private final List<Usuario> usuarios = new ArrayList<>();
     private Long idCount = 1L;
 
-        // http://localhost:8080/api/usuario/criarUsuario => POST
+        // http://localhost:8080/api/usuarios/criarUsuario => POST
         @PostMapping("/criarUsuario")
         public ResponseEntity<Usuario> criarUsuario(@RequestBody Usuario usuario){
             Usuario novoUsuario = usuarioService.criarUsuario(usuario);
@@ -29,13 +29,13 @@ public class UsuarioController {
             return new ResponseEntity<>(novoUsuario, HttpStatus.CREATED);
         }
 
-        // http://localhost:8080/api/usuario/listarUsuarios => GET
+        // http://localhost:8080/api/usuarios/listarUsuarios => GET
         @GetMapping("/listarUsuarios")
         public List<Usuario> ListarUsuarios(){
             return usuarioService.listarUsuarios();
         }
 
-        // http://localhost:8080/api/usuario/deletarUsuario/{id} => DELETE
+        // http://localhost:8080/api/usuarios/deletarUsuario/{id} => DELETE
         @DeleteMapping("/deletarUsuario/{id}")
         public ResponseEntity<String> DeletarUsuarios(@PathVariable Long id){
             boolean removido = usuarioService.deletarUsuario(id);
@@ -46,7 +46,7 @@ public class UsuarioController {
             }
         }
 
-        // http://localhost:8080/api/usuario/atualizarUsuario/{id} => PUT
+        // http://localhost:8080/api/usuarios/atualizarUsuario/{id} => PUT
         @PutMapping("/atualizarUsuario/{id}")
         public ResponseEntity<String> atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuarioAtualizado){
             boolean atualizado = usuarioService.atualizarUsuario(id, usuarioAtualizado);
@@ -57,7 +57,7 @@ public class UsuarioController {
             }
         }
 
-        // http://localhost:8080/api/usuario/buscarUsuario/{id} => GET
+        // http://localhost:8080/api/usuarios/buscarUsuario/{id} => GET
         @GetMapping("/buscarUsuario/{id}")
         public ResponseEntity<?> buscarUsuarioPorId(@PathVariable Long id){
             Optional<Usuario> usuario = usuarioService.buscarUsuarioPorId(id);
@@ -66,4 +66,5 @@ public class UsuarioController {
         }
 
         // http://localhost:8080/swagger-ui/index.html#/
+        // http://localhost:8080/h2
 }
