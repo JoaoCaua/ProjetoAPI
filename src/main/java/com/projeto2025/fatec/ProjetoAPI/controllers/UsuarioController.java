@@ -1,6 +1,7 @@
 package com.projeto2025.fatec.ProjetoAPI.controllers;
 import com.projeto2025.fatec.ProjetoAPI.entities.Usuario;
 import com.projeto2025.fatec.ProjetoAPI.domain.usuario.UsuarioService;
+import com.projeto2025.fatec.ProjetoAPI.exception.RecursoNaoEncontradoException;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
