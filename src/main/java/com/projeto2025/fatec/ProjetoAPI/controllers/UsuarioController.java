@@ -16,6 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
+    
     @Autowired
     private UsuarioService usuarioService;
     private static final Logger logger = LoggerFactory.getLogger(UsuarioController.class.getName());

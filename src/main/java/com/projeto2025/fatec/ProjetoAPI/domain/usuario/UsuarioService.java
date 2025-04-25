@@ -1,5 +1,6 @@
 package com.projeto2025.fatec.ProjetoAPI.domain.usuario;
 import com.projeto2025.fatec.ProjetoAPI.entities.Usuario;
+import com.projeto2025.fatec.ProjetoAPI.exception.RecursoNaoEncontradoException;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UsuarioService {
+    
     @Autowired
     private UsuarioRepository usuarioRepository;
 
@@ -28,6 +30,7 @@ public class UsuarioService {
             Usuario usuario = usuarioOptional.get();
             usuario.setNome(usuarioAtualizado.getNome());
             usuario.setEmail(usuarioAtualizado.getEmail());
+            usuario.setSenha(usuarioAtualizado.getSenha());
             usuarioRepository.save(usuario);
             return true;
         }
